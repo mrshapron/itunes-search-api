@@ -1,0 +1,14 @@
+-- Database: ItunesAPI
+
+-- DROP DATABASE "ItunesAPI";
+
+CREATE DATABASE "ItunesAPI"
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'English_United States.1255'
+    LC_CTYPE = 'English_United States.1255'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+create index idx_count_search on itemApi(item_count_search)
