@@ -9,9 +9,11 @@ namespace SongsAPI.Repository
 {
     public class MyDatabase
     {
+        static string your_postgres_user_id = "";
+        static string your_postgres_pasword = "";
         private static string connstring = String.Format("Server ={0}; Port={1};" +
             "User Id = {2};Password={3};Database={4};",
-            "localhost", 5432, "postgres", "123123", "ItunesAPI");
+            "localhost", 5432,your_postgres_user_id, your_postgres_pasword, "ItunesAPI");
         private static NpgsqlConnection conn;
 
         public MyDatabase()
@@ -119,7 +121,12 @@ namespace SongsAPI.Repository
                 return DBStatus.Created;
             return DBStatus.Error;
         }
-
+        /// <summary>
+        /// Function that adding to the counter views
+        /// if the id doesn't exist in the db, it created it
+        /// </summary>
+        /// <param name="itunes_id"></param>
+        /// <returns>the status</returns>
         public DBStatus AddToSearch(int itunes_id)
         {
             if (isExistInDB(itunes_id) == DBStatus.Found)
