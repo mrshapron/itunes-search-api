@@ -11,8 +11,6 @@ CREATE DATABASE "ItunesAPI"
     TABLESPACE = pg_default
     CONNECTION LIMIT = -1;
 
-create index idx_count_search on itemApi(item_count_search)
-
 CREATE TABLE public.itemapi
 (
     item_id integer NOT NULL DEFAULT nextval('itemapi_item_id_seq'::regclass),
