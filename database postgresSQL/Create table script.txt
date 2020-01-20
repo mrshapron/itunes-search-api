@@ -12,3 +12,25 @@ CREATE DATABASE "ItunesAPI"
     CONNECTION LIMIT = -1;
 
 create index idx_count_search on itemApi(item_count_search)
+
+CREATE TABLE public.itemapi
+(
+    item_id integer NOT NULL DEFAULT nextval('itemapi_item_id_seq'::regclass),
+    item_count_search integer,
+    itunes_id integer,
+    CONSTRAINT itemapi_pkey PRIMARY KEY (item_id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.itemapi
+    OWNER to postgres;
+
+-- Index: idx_count_search
+
+-- DROP INDEX public.idx_count_search;
+
+CREATE INDEX idx_count_search
+    ON public.itemapi USING btree
+    (item_count_search ASC NULLS LAST)
+    TABLESPACE pg_default;
