@@ -145,7 +145,8 @@ nav {
   justify-content: space-around;
   align-items: center;
   list-style: none;
-  color: black;
+  color: black; 
+  font-family: inherit;
 }
 
 nav li {
@@ -194,4 +195,9 @@ nav li {
 .body-content {
   margin-top: 0%;
   margin-bottom: 10%;
+}
+
+.main-label{
+  font-size: 20px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
