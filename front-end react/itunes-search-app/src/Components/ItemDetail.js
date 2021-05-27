@@ -30,7 +30,7 @@ const ItemDetail = ({ match }) => {
   };
 
   return (
-    <div>
+    <div className="item-detail">
       {item.kind == "song" ? (
         <SongDetailed
           className="item"
