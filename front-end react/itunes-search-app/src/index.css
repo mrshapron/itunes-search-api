@@ -51,6 +51,11 @@ a {
   padding-top: 45px;
   padding-bottom: 30px;
 }
+.item-detail{
+  width: 30%;
+  min-width: 330px;
+  margin: auto;
+}
 
 .search-bar {
   width: 50%;
@@ -176,10 +181,6 @@ nav li {
   display: flex;
 }
 
-.audio-player {
-  margin-left: 35%;
-  width: 30%;
-}
 
 *:focus {
   outline: none;
